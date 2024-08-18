@@ -1,0 +1,53 @@
+.wrapper {
+    background-image: linear-gradient(180deg, rgba(66, 65, 65, 0.8), transparent);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+}
+.nav-middle {
+    ul {
+        li {
+            a {
+                text-decoration: none;
+                color: var(--white-color);
+                padding: 10px 16px;
+                font-size: var(--heading-size);
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 90%;
+                    left: 0;
+                    width: 0;
+                    height: 5%;
+                    background-color: var(--white-color);
+                    transition: width 0.3s ease-in-out;
+                }
+                &:hover::after {
+                    cursor: pointer;
+                    width: 100%;
+                }
+                &.active::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.social-button {
+    transition: background-color 0.3s linear;
+    &:hover {
+        cursor: pointer;
+        &.github {
+            background-color: #1a1e22;
+        }
+        &.linkedin {
+            background-color: #2764ab;
+        }
+        &.facebook {
+            background-color: #0963f7;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+navItems:
+    - id: 1
+      name: Home
+      link: /
+    - id: 2
+      name: Skills
+      link: /skills
+    - id: 3
+      name: Project
+      link: /project
+    - id: 4
+      name: Resume
+      link: /resume
+    - id: 5
+      name: Contact
+      link: /contact
+
+navSocials:
+    - id: 1
+      class: github
+      icon: faGithub
+      link: 'https://github.com/minhnhutbui'
+    - id: 2
+      class: linkedin
+      icon: faLinkedin
+      link: 'https://www.linkedin.com/in/minh-bui-851206221/'
+    - id: 3
+      class: facebook
+      icon: faFacebook
+      link: 'https://www.facebook.com/rin.ranroi/'

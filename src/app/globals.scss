@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CUSTOM FONT */
+@font-face {
+    font-family: Centra;
+    src: url('../../public/assets/font/CentraNo2-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Centra;
+    src: url('../../public/assets/font/CentraNo2-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Centra;
+    src: url('../../public/assets/font/CentraNo2-Book.ttf');
+    font-weight: 400;
+}
+
+:root {
+    --font-family: 'Centra', sans-serif;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    letter-spacing: 1px;
+    font-family: var(--font-family);
+    color: white;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+    overflow-y: overlay;
+}
+
+#root {
+    height: inherit;
+}
+
+.light,
+.dark,
+.light > div,
+.dark > div {
+    height: inherit;
+    position: relative;
+}

@@ -1,0 +1,13 @@
+copyRights:
+    - id: 1
+      description: '© 2024 by Minh.'
+    - id: 2
+      description: 'Powered and secured by M&B'
+
+contacts:
+    - id: 1
+      type: 'Call'
+      detail: '0426 429 113'
+    - id: 2
+      type: 'Write'
+      detail: 'minhnhutbui2599@gmail.com'
