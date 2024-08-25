@@ -4,14 +4,31 @@ import loadYaml from '@/utils/loadYaml';
 import { FooterItems } from './types/FooterItem';
 
 function Footer(): ReactElement {
-    const [footerItems, setFooterItems] = useState<FooterItems>();
-    useEffect(() => {
-        async function fetchData() {
-            const footer_items: FooterItems = await loadYaml(process.env.NEXT_PUBLIC_FOOTER_ITEMS_PATH || '');
-            setFooterItems(footer_items);
-        }
-        fetchData();
-    }, []);
+    const footerItems: FooterItems = {
+        copyRights: [
+            {
+                id: 1,
+                description: '© 2024 by Minh.',
+            },
+            {
+                id: 2,
+                description: 'Powered and secured by MB',
+            },
+        ],
+        contacts: [
+            {
+                id: 1,
+                type: 'Call',
+                detail: '0426 429 113',
+            },
+            {
+                id: 2,
+                type: 'Write',
+                detail: 'minhnhutbui2599@gmail.com',
+            },
+        ],
+    };
+
     return (
         <div className="w-full absolute bottom-0 text-sm">
             <div className="xl:max-w-[1400px] 2xl:max-w-screen-2xl mx-auto flex justify-between py-4">
