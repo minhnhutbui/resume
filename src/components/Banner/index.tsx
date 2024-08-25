@@ -2,7 +2,7 @@
 import { ReactElement, useContext } from 'react';
 import styles from './Banner.module.scss';
 import { ThemeContext, ThemeContextProps } from '@/contexts/ThemeContext';
-import Typewriter from 'typewriter-effect';
+import { Typewriter } from 'nextjs-simple-typewriter';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
@@ -26,14 +26,8 @@ function Banner(): ReactElement {
                 </video> */}
             <div className={'w-full h-full fixed top-1/3'}>
                 <div className={'xl:max-w-[1400px] 2xl:max-w-screen-2xl w-full h-full mx-auto'}>
-                    <div className={'text-6xl font-bold drop-shadow-lg my-4'}>
-                        <Typewriter
-                            options={{
-                                strings: ['Hi! My name is Minh', "I'm a Web Developer"],
-                                autoStart: true,
-                                loop: true,
-                            }}
-                        />
+                    <div className={'text-6xl font-bold drop-shadow-lg my-4 min-h-16'}>
+                        <Typewriter words={['Hi! My name is Minh', "I'm a Web Developer"]} loop={0} />
                     </div>
                     <button
                         className={
