@@ -3,16 +3,19 @@ import { ReactElement, useContext } from 'react';
 import styles from './Banner.module.scss';
 import { ThemeContext, ThemeContextProps } from '@/contexts/ThemeContext';
 import Typewriter from 'typewriter-effect';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 function Banner(): ReactElement {
     const themeValue = useContext<ThemeContextProps>(ThemeContext);
     const theme = themeValue.theme;
     return (
-        <div className={`${styles['wrapper']} h-full`}>
-            <video autoPlay muted loop className={theme === 'light' ? 'videoIn' : 'videoOut'}>
+        <div className={cx('wrapper', 'h-full')}>
+            <video autoPlay muted loop className={theme === 'light' ? cx('videoIn') : cx('videoOut')}>
                 <source src="/assets/background/Sunny.mp4" type="video/mp4" />
             </video>
-            <video autoPlay muted loop className={theme === 'dark' ? 'videoIn' : 'videoOut'}>
+            <video autoPlay muted loop className={theme === 'dark' ? cx('videoIn') : cx('videoOut')}>
                 <source src="/assets/background/Night_clear.mp4" type="video/mp4" />
             </video>
             {/* <video autoPlay muted loop className={cx('videoOut')}>

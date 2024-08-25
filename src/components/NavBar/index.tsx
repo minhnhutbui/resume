@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { NavBarItem } from './types/NavItem';
 import { ThemeContext } from '@/contexts/ThemeContext';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 function NavBar(): ReactElement {
     const themeValue = useContext(ThemeContext);
@@ -101,7 +104,10 @@ function NavBar(): ReactElement {
                     <button className={'min-w-9 basis-1/7 rounded-lg p-2'} onClick={themeValue.toggleTheme}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="fill-yellow-500 hidden dark:block"
+                            className={cx('fill-yellow-500', {
+                                block: themeValue.theme === 'dark',
+                                hidden: themeValue.theme === 'light',
+                            })}
                             fill="currentColor"
                             viewBox="0 0 20 20"
                         >
@@ -113,7 +119,10 @@ function NavBar(): ReactElement {
                         </svg>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="fill-violet-700 block dark:hidden"
+                            className={cx('fill-violet-700', {
+                                block: themeValue.theme === 'light',
+                                hidden: themeValue.theme === 'dark',
+                            })}
                             fill="currentColor"
                             viewBox="0 0 20 20"
                         >
