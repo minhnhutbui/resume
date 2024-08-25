@@ -1,33 +1,70 @@
 'use client';
-import { ReactElement, useContext, useEffect, useState } from 'react';
+import { ReactElement, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.scss';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import loadYaml from '@/utils/loadYaml';
 import { NavBarItem } from './types/NavItem';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ThemeContext } from '@/contexts/ThemeContext';
-
-const iconMap: { [key: string]: IconProp } = {
-    faGithub: faGithub,
-    faLinkedin: faLinkedin,
-    faFacebook: faFacebook,
-};
 
 function NavBar(): ReactElement {
     const themeValue = useContext(ThemeContext);
-    const [navBarItems, setNavBarItems] = useState<NavBarItem>();
+    const navBarItems: NavBarItem = {
+        navItems: [
+            {
+                id: 1,
+                name: 'Home',
+                link: '/',
+                active: true,
+            },
+            {
+                id: 2,
+                name: 'Skills',
+                link: '/skills',
+                active: false,
+            },
+            {
+                id: 3,
+                name: 'Project',
+                link: '/project',
+                active: false,
+            },
+            {
+                id: 4,
+                name: 'Resume',
+                link: '/resume',
+                active: false,
+            },
+            {
+                id: 5,
+                name: 'Contact',
+                link: '/contact',
+                active: false,
+            },
+        ],
+        navSocials: [
+            {
+                id: 1,
+                class: 'github',
+                icon: faGithub,
+                link: 'https://github.com/minhnhutbui',
+            },
+            {
+                id: 2,
+                class: 'linkedin',
+                icon: faLinkedin,
+                link: 'https://www.linkedin.com/in/minh-bui-851206221/',
+            },
+            {
+                id: 3,
+                class: 'facebook',
+                icon: faFacebook,
+                link: 'https://www.facebook.com/rin.ranroi/',
+            },
+        ],
+    };
     const currentPath = usePathname();
-
-    useEffect(() => {
-        async function fetchData() {
-            const nav_bar_items: NavBarItem = await loadYaml(process.env.NEXT_PUBLIC_NAV_ITEMS_PATH || '');
-            setNavBarItems(nav_bar_items);
-        }
-        fetchData();
-    }, []);
 
     return (
         <div className={styles.wrapper}>
@@ -51,10 +88,12 @@ function NavBar(): ReactElement {
                         {navBarItems?.navSocials.map((item, index) => (
                             <li
                                 key={index}
-                                className={`${styles['social-button']} ${item.class} min-w-9 p-2 border-2 aspect-square w-1/6 flex items-center justify-center rounded-full`}
+                                className={`${styles['social-button']} ${
+                                    styles[item.class]
+                                } min-w-9 p-2 border-2 aspect-square w-1/6 flex items-center justify-center rounded-full`}
                             >
                                 <a href={item.link} target="_blank" rel="noreferrer">
-                                    <FontAwesomeIcon icon={iconMap[`${item.icon}`]} />
+                                    <FontAwesomeIcon icon={item.icon} />
                                 </a>
                             </li>
                         ))}

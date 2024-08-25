@@ -38,16 +38,17 @@
 }
 .social-button {
     transition: background-color 0.3s linear;
-    &:hover {
-        cursor: pointer;
-        &.github {
-            background-color: #1a1e22;
-        }
-        &.linkedin {
-            background-color: #2764ab;
-        }
-        &.facebook {
-            background-color: #0963f7;
-        }
+    cursor: pointer;
+
+    &.github:hover {
+        background-color: #1a1e22;
+    }
+
+    &.linkedin:hover {
+        background-color: #2764ab;
+    }
+
+    &.facebook:hover {
+        background-color: #0963f7;
     }
 }
