@@ -1,9 +1,6 @@
-'use client';
-import { ReactElement, useEffect, useState } from 'react';
-import loadYaml from '@/utils/loadYaml';
 import { FooterItems } from './types/FooterItem';
 
-function Footer(): ReactElement {
+function Footer() {
     const footerItems: FooterItems = {
         copyRights: [
             {
@@ -30,7 +27,7 @@ function Footer(): ReactElement {
     };
 
     return (
-        <div className="w-full absolute bottom-0 text-sm">
+        <footer className="w-full relative bottom-0 text-sm">
             <div className="xl:max-w-[1400px] 2xl:max-w-screen-2xl mx-auto flex justify-between py-4">
                 <div className="flex flex-col items-start">
                     {footerItems?.copyRights.map((copyRight) => (
@@ -46,7 +43,7 @@ function Footer(): ReactElement {
                     ))}
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 
