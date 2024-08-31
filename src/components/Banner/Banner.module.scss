@@ -1,4 +1,5 @@
 .wrapper {
+    transition: opacity 0.5s;
     .videoIn {
         position: fixed;
         object-fit: cover;

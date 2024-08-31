@@ -11,7 +11,7 @@ function Banner(): ReactElement {
     const themeValue = useContext<ThemeContextProps>(ThemeContext);
     const theme = themeValue.theme;
     return (
-        <div className={cx('wrapper', 'h-full')}>
+        <div className={cx('wrapper', 'h-full fixed')}>
             <video autoPlay muted loop className={theme === 'light' ? cx('videoIn') : cx('videoOut')}>
                 <source src="/assets/background/Sunny.mp4" type="video/mp4" />
             </video>
