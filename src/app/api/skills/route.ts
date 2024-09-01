@@ -8,3 +8,9 @@ export async function POST(req: NextRequest) {
     await Skill.create({ name, description });
     return NextResponse.json({ message: 'Skill created' }, { status: 200 });
 }
+
+export async function GET() {
+    await connectMongoDB();
+    const skills = await Skill.find();
+    return NextResponse.json({ skills });
+}
