@@ -1,4 +1,4 @@
-interface Skill {
+interface Project {
     _id: string;
     name: string;
     description: string;
@@ -8,6 +8,6 @@ interface Skill {
     __v: number;
 }
 
-interface Skills {
-    data: Skill[];
+interface Projects {
+    projects: Project[];
 }

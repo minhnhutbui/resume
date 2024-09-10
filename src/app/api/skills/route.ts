@@ -1,16 +1,11 @@
-import connectMongoDB from '../../../../lib/mongodb';
 import Skill from '../../../../models/Skill';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
+import { handleGET, handlePOST } from '@/utils/request';
 
 export async function POST(req: NextRequest) {
-    const { name, description } = await req.json();
-    await connectMongoDB();
-    await Skill.create({ name, description });
-    return NextResponse.json({ message: 'Skill created' }, { status: 200 });
+    return handlePOST(req, Skill);
 }
 
 export async function GET() {
-    await connectMongoDB();
-    const skills = await Skill.find();
-    return NextResponse.json({ skills });
+    return handleGET(Skill);
 }

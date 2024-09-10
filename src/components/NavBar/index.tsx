@@ -30,7 +30,7 @@ function NavBar(): ReactElement {
             {
                 id: 3,
                 name: 'Project',
-                link: '/project',
+                link: '/projects',
                 active: false,
             },
             {
