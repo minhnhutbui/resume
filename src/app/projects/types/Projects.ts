@@ -9,5 +9,5 @@ interface Project {
 }
 
 interface Projects {
-    projects: Project[];
+    data: Project[];
 }
