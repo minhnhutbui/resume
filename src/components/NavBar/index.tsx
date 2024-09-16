@@ -1,5 +1,5 @@
 'use client';
-import { ReactElement, useContext } from 'react';
+import { ReactElement, useContext, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.scss';
 import Link from 'next/link';
@@ -12,6 +12,16 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 function NavBar(): ReactElement {
+    const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(document.body.scrollTop > 0);
+        };
+        document.body.addEventListener('scroll', handleScroll);
+        return () => {
+            document.body.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     const themeValue = useContext(ThemeContext);
     const navBarItems: NavBarItem = {
         navItems: [
@@ -21,26 +31,26 @@ function NavBar(): ReactElement {
                 link: '/',
                 active: true,
             },
+            // {
+            //     id: 2,
+            //     name: 'Skills',
+            //     link: '/skills',
+            //     active: false,
+            // },
             {
                 id: 2,
-                name: 'Skills',
-                link: '/skills',
-                active: false,
-            },
-            {
-                id: 3,
                 name: 'Project',
                 link: '/projects',
                 active: false,
             },
             {
-                id: 4,
+                id: 3,
                 name: 'Resume',
                 link: '/resume',
                 active: false,
             },
             {
-                id: 5,
+                id: 4,
                 name: 'Contact',
                 link: '/contact',
                 active: false,
@@ -70,8 +80,8 @@ function NavBar(): ReactElement {
     const currentPath = usePathname();
 
     return (
-        <div className={styles.wrapper}>
-            <div className={'grid grid-cols-12 xl:max-w-[1400px] 2xl:max-w-screen-2xl mx-auto py-2'}>
+        <div className={cx('wrapper', { 'backdrop-blur-xl': scrolled })}>
+            <div className={'grid grid-cols-12 max-w-screen-xl mx-auto py-2'}>
                 <div className={'lg:col-span-3 flex'}>
                     <img className={'w-1/3 cursor-pointer'} src="/assets/img/logo.svg" alt="Logo" />
                 </div>
