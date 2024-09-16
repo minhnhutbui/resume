@@ -25,7 +25,7 @@ function Banner(): ReactElement {
                 <source src={NightRainBackground} type="video/mp4" />
                 </video> */}
             <div className={'w-full h-full fixed top-1/3'}>
-                <div className={'xl:max-w-[1400px] 2xl:max-w-screen-2xl w-full h-full mx-auto'}>
+                <div className={'max-w-screen-xl w-full h-full mx-auto'}>
                     <div className={'text-6xl font-bold drop-shadow-lg my-4 min-h-16'}>
                         <Typewriter words={['Hi! My name is Minh', "I'm a Web Developer"]} loop={0} />
                     </div>

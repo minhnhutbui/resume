@@ -28,7 +28,7 @@ function Footer() {
 
     return (
         <footer className="w-full relative bottom-0 text-sm">
-            <div className="xl:max-w-[1400px] 2xl:max-w-screen-2xl mx-auto flex justify-between py-4">
+            <div className="max-w-screen-xl mx-auto flex justify-between py-4">
                 <div className="flex flex-col items-start">
                     {footerItems?.copyRights.map((copyRight) => (
                         <div key={copyRight.id}>{copyRight.description}</div>
