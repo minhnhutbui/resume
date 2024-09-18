@@ -21,7 +21,7 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <ThemeProvider>
-                    <div className="bg-[#EDEDED] flex flex-col min-h-screen">
+                    <div className="bg-[#d6c4b2] flex flex-col min-h-screen">
                         <NavBar />
                         <div className="py-24 flex-1">{children}</div>
                         <Footer />

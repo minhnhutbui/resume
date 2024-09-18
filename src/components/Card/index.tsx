@@ -5,12 +5,17 @@ const cx = classNames.bind(styles);
 
 function Card({ title, description, imgPath }) {
     return (
-        <div className={cx('wrapper', 'w-full flex flex-col items-center p-10 shadow-lg rounded')}>
-            <div className="w-1/2 aspect-square flex justify-center mb-4 flex-1">
-                <img className="object-cover rounded-full" src={imgPath} alt="" />
+        <div
+            className={cx(
+                'wrapper',
+                'w-full p-10 shadow-lg rounded-3xl grid auto-rows-min cursor-pointer shadow-lg animate-fadeIn',
+            )}
+        >
+            <div className="w-1/2 aspect-square mb-16 mx-auto">
+                <img className="h-full w-full object-cover rounded-full" src={imgPath} alt="" />
             </div>
-            <div className="mx-auto flex flex-col items-center justify-center text-center">
-                <span className="block mb-4 font-semibold text-lg">{title}</span>
+            <div className="mx-auto text-center row-auto">
+                <span className="block mb-8 font-semibold text-xl">{title}</span>
                 <span>{description}</span>
             </div>
         </div>
