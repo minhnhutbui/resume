@@ -1,15 +1,3 @@
 .wrapper {
-    animation: fadeIn 1s linear;
     background-color: #9c7d6a;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }

@@ -18,6 +18,15 @@ const config: Config = {
             backgroundColor: {
                 'light-theme-brown': '#916d55',
             },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0', transform: 'translateX(5px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+            },
+            animation: {
+                fadeIn: 'fadeIn 1s linear',
+            },
         },
     },
     plugins: [],
