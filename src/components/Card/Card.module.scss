@@ -1,3 +1,8 @@
 .wrapper {
     background-color: #9c7d6a;
+    transition: transform 0.2s linear;
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-5px);
+    }
 }
