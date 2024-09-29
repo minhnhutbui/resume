@@ -3,6 +3,7 @@ interface Project {
     name: string;
     description: string;
     img_path: string;
+    uri: string;
     createdAt: string;
     updatedAt: string;
     __v: number;

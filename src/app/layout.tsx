@@ -23,7 +23,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <div className="bg-[#d6c4b2] flex flex-col min-h-screen">
                         <NavBar />
-                        <div className="py-24 flex-1">{children}</div>
+                        <div className="py-40 flex-1">{children}</div>
                         <Footer />
                     </div>
                 </ThemeProvider>

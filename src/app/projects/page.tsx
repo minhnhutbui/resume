@@ -15,7 +15,9 @@ function Project() {
     return (
         <div className="max-w-screen-xl w-full h-full mx-auto grid grid-cols-3 gap-10">
             {projectItems?.data?.map((i) => (
-                <Card key={i._id} title={i.name} description={i.description} imgPath={i.img_path} />
+                <a className="grid" key={i._id} href={i.uri} target="_blank">
+                    <Card title={i.name} description={i.description} imgPath={i.img_path} />
+                </a>
             ))}
         </div>
     );
