@@ -1,5 +1,5 @@
 .wrapper {
-    background-color: #9c7d6a;
+    background-color: var(--card-background);
     transition: transform 0.2s linear;
     &:hover {
         opacity: 0.9;
