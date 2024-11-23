@@ -25,6 +25,7 @@
     "sass": "^1.77.8"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
