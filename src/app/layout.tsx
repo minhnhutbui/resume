@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import { AOSInit } from './aos';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <AOSInit />
             <body>
                 <ThemeProvider>
                     <div className="bg-[#d6c4b2] flex flex-col min-h-screen">
