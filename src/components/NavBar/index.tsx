@@ -15,11 +15,11 @@ function NavBar(): ReactElement {
     const [scrolled, setScrolled] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(document.body.scrollTop > 0);
+            setScrolled(window.scrollY > 0);
         };
-        document.body.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            document.body.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
     const themeValue = useContext(ThemeContext);
