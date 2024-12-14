@@ -1,13 +1,10 @@
-import styles from './Resume.module.scss';
-import classNames from 'classnames/bind';
+import Section from '@/components/Section';
+// import styles from './Resume.module.scss';
+// import classNames from 'classnames/bind';
 
-const cx = classNames.bind(styles);
+// const cx = classNames.bind(styles);
 
 function Resume() {
-    return (
-        <div>
-            <div className={cx('wrapper')}></div>
-        </div>
-    );
+    return <Section></Section>;
 }
 export default Resume;
